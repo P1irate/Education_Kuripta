@@ -47,6 +47,10 @@
                 CornerRadius="5" BorderThickness="2" BorderBrush="#FF730F0F" Background="#FFCD572D">
                         <Button x:Name="buttonTheory" Content="перейти" HorizontalAlignment="Left" Margin="5,1,0,0" VerticalAlignment="Top" Width="140" FontFamily="Century Gothic" FontSize="18" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" Height="24" Click="buttonTheory_Click"/>
                     </Border>
+                    <Border Margin="611,47,32,328"
+                CornerRadius="5" BorderThickness="2" BorderBrush="#FF730F0F" Background="#FFCD572D">
+                        <Button x:Name="buttoтReturn" Content="вернуться" HorizontalAlignment="Left" Margin="5,1,-2,0" VerticalAlignment="Top" Width="146" FontFamily="Century Gothic" FontSize="18" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" Height="24" Click="buttoтReturn_Click" />
+                    </Border>
                     <Image Margin="562,83,52,99" Source="img/панда6.png"/>
 
 

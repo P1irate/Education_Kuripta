@@ -60,5 +60,12 @@ namespace test
         {
 
         }
+
+        private void buttoтReturn_Click(object sender, RoutedEventArgs e)
+        {
+            startWindow theoryWindow = new startWindow();
+            theoryWindow.Show();
+            this.Close();
+        }
     }
 }
