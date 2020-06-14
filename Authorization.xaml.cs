@@ -49,10 +49,10 @@ namespace test
         {
             startWindow startWindow = new startWindow();
             Ganeral_Variable.UserName = login.Text;
-            GV.UserPas = password.Text;
+            Ganeral_Variable.UserPas = password.Text;
             if (password.Text != "")
             {
-                GV.Login_Permission = SC.Find_User(Ganeral_Variable.UserName, GV.UserPas);
+                GV.Login_Permission = SC.Find_User(Ganeral_Variable.UserName, Ganeral_Variable.UserPas);
                 if (GV.Login_Permission == true)
                 {
                     startWindow.Show();
@@ -64,7 +64,7 @@ namespace test
                 }
             }
             else MessageBox.Show("Введите пароль");
-
+            SC.Getting_Id_user(Ganeral_Variable.UserName, Ganeral_Variable.UserPas);
         }
     }
 }

@@ -347,6 +347,30 @@ namespace test
 
 			}
 		}
+        public void Getting_Id_user(string user_log,string user_pas)
+        {
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("Select UserID From Users WHERE UserName = '"+user_log+"' and UserPas = '"+user_pas+"'", connection);
+                    Ganeral_Variable.ID_user = (int)command.ExecuteScalar();
+                    connection.Close();
+              
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+
+            }
+        }
 
         public string clubOfHating63(string text)
         {

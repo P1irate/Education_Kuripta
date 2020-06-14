@@ -17,7 +17,7 @@ namespace test
         public SqlDataAdapter adapter;
         public SqlCommand cmd;
         public static string UserName;
-        public string UserPas;
+        public static string UserPas;
         public static List<double> Сorrect_Answer = new List<double> {0};
         public static List<string> User_Answer = new List<string> {null};
         public static string Theory;
@@ -25,6 +25,7 @@ namespace test
         public string Solution;
         public bool Login_Permission;
         public static int ID_Theme;
+        public static int ID_user;
         public static List<int> Id_Theme = new List<int> { 0 };
         public static List<int> Id_Task = new List<int> {1};
        
