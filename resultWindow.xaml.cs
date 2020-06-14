@@ -45,5 +45,12 @@ namespace test
             taskWindow.Show();
             this.Close();
         }
+
+        private void MyWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            User_Answer.ItemsSource = Ganeral_Variable.User_Answer;
+            True_Answer.ItemsSource = Ganeral_Variable.Сorrect_Answer;
+
+        }
     }
 }

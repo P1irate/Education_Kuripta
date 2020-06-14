@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="practiceWindow" Height="500" Width="800" x:Name="MyWindow"
-        AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None" Loaded="MyWindow_Loaded">
     <Grid>
         <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="2"
-                CornerRadius="30,30,30,30">
+                CornerRadius="30,30,30,30" Loaded="Border_Loaded">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientBrush.GradientStops>
@@ -42,10 +42,10 @@
                     <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="1"
                 CornerRadius="50,50,40,40" Background="#FFEFEF">
                     </Border>
-                    <Label Content="ЗАДАНИЕ № 1" Margin="60,21,516,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="18" BorderBrush="#FFFBFBFB" Foreground="#FF730F0F" Height="30"/>
+                    <Label x:Name="Number_task" Content="ЗАДАНИЕ № " Margin="60,21,516,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="18" BorderBrush="#FFFBFBFB" Foreground="#FF730F0F" Height="30"/>
                     <Border Margin="60,56,60,213"
                 CornerRadius="5" BorderThickness="2" BorderBrush="#FF730F0F" Background="#F8CFC4">
-                    <TextBox x:Name="Task" HorizontalAlignment="Left" Height="120" Margin="8,8,0,0" VerticalAlignment="Top" Width="656" BorderBrush="#F8CFC4" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic" FontSize="14" SelectionBrush="#FFDE405B"/>
+                        <TextBox x:Name="Task" HorizontalAlignment="Left" Height="120" Margin="8,8,0,0" VerticalAlignment="Top" Width="656" BorderBrush="#F8CFC4" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic" FontSize="14" SelectionBrush="#FFDE405B" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True"/>
                     </Border>
                     <RadioButton x:Name="answer1" Content="вариант 1" HorizontalAlignment="Left" Margin="74,226,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14" Foreground="#FF730F0F" BorderBrush="#FF730F0F"/>
                     <RadioButton x:Name="answer2" Content="вариант 2" HorizontalAlignment="Left" Margin="74,261,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14" Foreground="#FF730F0F" BorderBrush="#FF730F0F"/>

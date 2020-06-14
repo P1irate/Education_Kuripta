@@ -56,11 +56,19 @@ namespace test
                 {
                     MessageBox.Show("Введите никнейм меньше 32 символов");
                 }
-                if (temp_pas.Length > 32)
+				if (temp_name.Length < 6)
+				{
+					MessageBox.Show("Введите никнейм больше 5 символов");
+				}
+				if (temp_pas.Length > 32)
                 {
                     MessageBox.Show("Введите пароль меньше 32 символов");
                 }
-                if (temp_pas != temp_pas2)
+				if (temp_pas.Length < 6)
+				{
+					MessageBox.Show("Введите пароль больше 5 символов");
+				}
+				if (temp_pas != temp_pas2)
                 {
                     MessageBox.Show("Пароли не совпадают");
                 }

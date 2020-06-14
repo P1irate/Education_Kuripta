@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="resultWindow" Height="500" Width="800" x:Name="MyWindow"
-        AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None" Loaded="MyWindow_Loaded">
     <Grid>
         <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="2"
                 CornerRadius="30,30,30,30">
@@ -22,12 +22,16 @@
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="96*"/>
+                    <ColumnDefinition Width="103*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"></RowDefinition>
                     <RowDefinition Height="32*"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid>
+                <Grid Grid.ColumnSpan="2" Margin="0,0,0,406" Grid.RowSpan="2">
                     <Button x:Name="buttonExit" Width="30" Height="30" Background="#73220C" BorderBrush="#73220C" Margin="739,10,27,10" Click="buttonExit_Click">
                         <Image Source="img/33.png" RenderTransformOrigin="1,0.5"/>
                     </Button>
@@ -38,23 +42,28 @@
                         <Image Source="img/00.png"/>
                     </Button>
                 </Grid>
-                <Grid Grid.Row="1" Background="#73220C">
+                <Grid Grid.Row="1" Background="#73220C" Grid.ColumnSpan="2" Margin="0,1,0,0">
                     <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="1"
                 CornerRadius="50,50,40,40" Background="#FFEFEF">
+                        <ListBox x:Name="listBox1" Margin="0,9,0,-9"/>
                     </Border>
                     <Border Margin="611,346,32,29"
                 CornerRadius="5" BorderThickness="2" BorderBrush="#FF730F0F" Background="#FFCD572D">
                         <Button x:Name="buttonTask" Content="перейти" HorizontalAlignment="Left" Margin="5,1,0,0" VerticalAlignment="Top" Width="140" FontFamily="Century Gothic" FontSize="18" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" Height="24" Click="buttonTask_Click"/>
                     </Border>
                     <Image Margin="32,274,530,0" Source="img/панда4.png"/>
-                    <Label Content="РЕЗУЛЬТАТЫ ТЕСТИРОВАНИЯ:" Margin="60,21,313,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20" BorderBrush="#FFFBFBFB" Foreground="#FF730F0F" Height="30"/>
-                    <Border Margin="32,56,32,132"
+                    <Label Content="РЕЗУЛЬТАТЫ ТЕСТИРОВАНИЯ:" Margin="237,10,252,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20" BorderBrush="#FFFBFBFB" Foreground="#FF730F0F" Height="30"/>
+                    <Border Margin="32,74,32,132"
                 CornerRadius="5" BorderThickness="2" BorderBrush="#FF730F0F" Background="#F8CFC4">
                         <ListBox HorizontalAlignment="Left" Height="207" Margin="4,4,0,0" VerticalAlignment="Top" Width="721" BorderBrush="#F8CFC4" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic" FontSize="14"/>
                     </Border>
                 </Grid>
-                <TextBlock  Padding="5" Grid.Row="2" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock  Padding="5" Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="9.162,0,393,0"></TextBlock>
+                <ListBox x:Name="True_Answer" HorizontalAlignment="Left" Height="195" Margin="9,79,0,0" Grid.Row="1" VerticalAlignment="Top" Width="365" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic"  FontSize="14" Grid.Column="1" />
+                <ListBox x:Name="User_Answer" HorizontalAlignment="Left" Height="195" Margin="37,79,0,0" Grid.Row="1" VerticalAlignment="Top" Width="351" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic" FontSize="14" Grid.ColumnSpan="2" />
             </Grid>
         </Border>
+        <Label x:Name="label" Content="Ваши ответы" HorizontalAlignment="Left" Height="29" Margin="118,104,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20" BorderBrush="#FFFBFBFB" Foreground="#FF730F0F"/>
+        <Label x:Name="label1" Content="Верные ответы" HorizontalAlignment="Left" Height="42" Margin="490,104,0,0" VerticalAlignment="Top"  FontFamily="Century Gothic" FontSize="20" BorderBrush="#FFFBFBFB" Foreground="#FF730F0F"/>
     </Grid>
 </Window>

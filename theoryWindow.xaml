@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="theoryWindow" Height="500" Width="800" x:Name="MyWindow"
-        AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None" Loaded="MyWindow_Loaded">
     <Grid>
         <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="2"
                 CornerRadius="30,30,30,30">
@@ -42,11 +42,11 @@
                 <Grid Grid.Row="1" Background="#73220C" Margin="0,0,296,0">
                     <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="1" CornerRadius="50,0,0,40" Background="#F6AD9A">
                     </Border>
-                    <Label Content="Т Е М А" Margin="197,10,198,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="28" BorderBrush="#FFFBFBFB" Foreground="White" FontWeight="Bold"/>
-                    <Button x:Name="button1" Background="#F6AD9A" BorderBrush="#F6AD9A" Margin="150,347,289,5">
+                    <Label x:Name="Theme_label" Content="Т Е М А" Margin="38,10,39,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="22" BorderBrush="#FFFBFBFB" Foreground="White" FontWeight="Bold"/>
+                    <Button x:Name="button_back_theme" Background="#F6AD9A" BorderBrush="#F6AD9A" Margin="150,347,289,5" Click="button_back_theme_Click">
                         <Image Source="img/назад1.png" Height="54" Width="56"/>
                     </Button>
-                    <Button x:Name="button2" Background="#F6AD9A" BorderBrush="#F6AD9A" Margin="287,347,151,5">
+                    <Button x:Name="button_next_theme" Background="#F6AD9A" BorderBrush="#F6AD9A" Margin="287,347,151,5" Click="button_next_theme_Click">
                         <Image Source="img/вперед1.png" Height="54" Width="56"/>
                     </Button>
                     <Border Margin="38,356,379,22" CornerRadius="5" BorderThickness="2" BorderBrush="#FF730F0F" Background="#FFCD572D">
@@ -54,15 +54,15 @@
                     </Border>
                     <Border Margin="38,60,39,64"
             CornerRadius="5" BorderThickness="2" BorderBrush="#FF730F0F" Background="#F8CFC4">
-                        <TextBox HorizontalAlignment="Left" Height="263" Margin="8,7,0,0" VerticalAlignment="Top" Width="406" BorderBrush="#F8CFC4" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic" FontSize="14" SelectionBrush="#FFDE405B"/>
+                        <TextBox x:Name="Theme" HorizontalAlignment="Left" Height="263" Margin="8,7,0,0" VerticalAlignment="Top" Width="406" BorderBrush="#F8CFC4" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic" FontSize="14" SelectionBrush="#FFDE405B" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True"/>
                     </Border>
                 </Grid>
 
                 <TextBlock  Padding="5" Grid.Row="2" HorizontalAlignment="Center"></TextBlock>
-                <Grid Grid.Row="1" Background="#73220C" Margin="500,0,0,0">
+                <Grid Grid.Row="1" Margin="500,0,0,0">
                     <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="1"
                 CornerRadius="0,50,40,0" Background="#FFEFEF">
-                        <wpf:OpenGLControl Margin="25,25,25,25"/>
+                        <wpf:OpenGLControl x:Name="openGLControl" Margin="25,25,25,25"/>
                     </Border>
                 </Grid>
             </Grid>

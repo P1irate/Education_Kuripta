@@ -47,12 +47,11 @@ namespace test
 
         private void buttonEnter_Click(object sender, RoutedEventArgs e)
         {
-            
             startWindow startWindow = new startWindow();
-            GV.UserName = login.Text;
+            Ganeral_Variable.UserName = login.Text;
             GV.UserPas = password.Text;
 
-            GV.Login_Permission = SC.Find_User(GV.UserName, GV.UserPas);
+            GV.Login_Permission = SC.Find_User(Ganeral_Variable.UserName, GV.UserPas);
             if (GV.Login_Permission == true)
             {
                 startWindow.Show();

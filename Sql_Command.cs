@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -35,19 +36,19 @@ namespace test
                 }
                 
             }
-            return task;
+            return clubOfHating63(task);
         }
 
-        public int Getting_Answer(int id_task)
+        public double Getting_Answer(int id_task)
         {
-            int answer = 0;
+            double answer = 0;
             using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
             {
                 try
                 {
                     connection.Open();
                     SqlCommand command = new SqlCommand("SELECT Answer FROM Practice WHERE ID_P = " + id_task, connection);
-                    answer = (Int32)command.ExecuteScalar();
+                    answer = (double)command.ExecuteScalar();
                 }
                 catch (Exception ex)
                 {
@@ -81,7 +82,7 @@ namespace test
                     connection.Close();
                 }
             }
-            return solution;
+            return clubOfHating63(solution);
         }
 
         public string Getting_Theory(int ID_Theory)
@@ -103,7 +104,7 @@ namespace test
                 {
                     connection.Close();
                 }
-                return Content;
+                return clubOfHating63(Content);
             }
         }
 
@@ -150,34 +151,38 @@ namespace test
         {
             using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
             {
-                Boolean answ = true;
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("SELECT UserName FROM Users WHERE UserName = " + name, connection);
-                    SqlCommand command_pas = new SqlCommand("SELECT UserPas FROM Users WHERE UserPas = " + password, connection);
-                    if (name == Convert.ToString(command.ExecuteScalar()))
+                    SqlCommand command = new SqlCommand("SELECT UserName FROM Users WHERE UserName = '" + name + "'", connection);           
+                    SqlCommand command_pas = new SqlCommand("SELECT UserPas FROM Users WHERE UserPas = '" + password + "'", connection);
+                    string name_temp = Convert.ToString(command.ExecuteScalar());
+                    string pas_temp = Convert.ToString(command_pas.ExecuteScalar());
+                    
+                    if (name == name_temp)
                     {
-						if (password == Convert.ToString(command_pas.ExecuteScalar()))
+						if ((password == pas_temp) && (password != null))
 						{
-							answ = true;
+							return true;
 						}
                         else
                         {
-							answ = false;
+							return false;
 						}
                     }
-                    else answ = false;
+                    else return false;
                 }
                 catch(Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                    return false;
+                    
                 }
                 finally
                 {
                     connection.Close();
                 }
-                return answ;
+                
             }
         }
 
@@ -185,24 +190,176 @@ namespace test
         {
             using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
             {
-                connection.Open();
-                ListBox lb = new ListBox();
-                SqlCommand command = new SqlCommand("SELECT Name_Chapter FROM Chapter", connection);
-                int i = 0;
-                ListTheory.Items.Clear();
-                SqlDataReader dataReader = command.ExecuteReader();
-                if (dataReader.HasRows)
+				try
+				{
+					connection.Open();
+					ListBox lb = new ListBox();
+					SqlCommand command = new SqlCommand("SELECT Name_Chapter FROM Chapter", connection);
+					int i = 0;
+					ListTheory.Items.Clear();
+					SqlDataReader dataReader = command.ExecuteReader();
+					if (dataReader.HasRows)
+					{
+						while (dataReader.Read())
+						{
+							ListTheory.Items.Add(dataReader.GetString(i));
+						}
+					}
+				}
+                catch (Exception ex)
                 {
-                    while (dataReader.Read())
-                    {
-                        ListTheory.Items.Add(dataReader.GetString(i));
-                        i++;
-                    }
+                    MessageBox.Show(ex.Message);
                 }
+                finally
+				{
+                    connection.Close();
+				}
 
-                connection.Close();
             }
 
         }
+
+        public int Getting_Id_Theame(string name)
+        {
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("SELECT ID FROM Chapter WHERE Name_Chapter = '" + name + "'", connection);
+                    int Id_Theme = Convert.ToInt32(command.ExecuteScalar());
+                    return Id_Theme;
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return -1;
+                }
+                finally
+                {
+                    connection.Close();
+                }               
+            }
+        }
+
+        public void Getting_Id_Task(int ID)
+        {
+
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                try
+                {
+					Random rnd = new Random();
+					int i = 0;
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("SELECT ID_P FROM Practice WHERE ID = " + ID, connection);
+
+                    if (Ganeral_Variable.Id_Task != null)
+                    {
+                        Ganeral_Variable.Id_Task.Clear();
+                    }                   
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    if (dataReader.HasRows)
+                    {
+                        while (dataReader.Read() && i<20)
+                        {
+							if(rnd.Next(0, 3) == 1 || rnd.Next(0, 3) == 2)
+							{
+                                Ganeral_Variable.Id_Task.Add(dataReader.GetInt32(0));
+								i++;
+							}
+                        }
+                    }
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+
+            }
+        }
+        public void Getting_Id_Theory(int ID)
+        {
+
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("SELECT ID_T FROM Theory WHERE ID = " + ID, connection);
+
+                    if (Ganeral_Variable.Id_Theme != null)
+                    {
+                        Ganeral_Variable.Id_Theme.Clear();
+                    }
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    if (dataReader.HasRows)
+                    {
+                        while (dataReader.Read())
+                        {
+                            Ganeral_Variable.Id_Theme.Add(dataReader.GetInt32(0));
+                        }
+                    }
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+
+            }
+        }
+
+        public string Getting_Name_Theory(int ID_Theory)
+		{
+			using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+			{
+				try
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand("SELECT Name_Theory FROM Theory WHERE ID_T = " + ID_Theory, connection);		        
+					string name = (string)command.ExecuteScalar();
+					connection.Close();
+					return name;
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+					return null;
+				}
+				finally
+				{
+					connection.Close();
+				}
+
+
+			}
+		}
+
+        public string clubOfHating63(string text)
+        {
+			string resText = "";
+            foreach (char c in text)
+            {
+                if (c != '?') resText += c;
+            }
+            if(text.Last() == '?') resText += text.Last();
+            return resText;
+        }
+
+        
     }
+
 }

@@ -19,6 +19,7 @@ namespace test
     /// </summary>
     public partial class startTheoryWindow : Window
     {
+        Ganeral_Variable GV = new Ganeral_Variable();
         Sql_Command SC = new Sql_Command();
         public startTheoryWindow()
         {
@@ -43,6 +44,8 @@ namespace test
 
         private void buttonTheory_Click(object sender, RoutedEventArgs e)
         {
+			string name_theame = Theory_Task.SelectedItem.ToString();
+            Ganeral_Variable.ID_Theme = SC.Getting_Id_Theame(name_theame);
             theoryWindow theoryWindow = new theoryWindow();
             theoryWindow.Show();
             this.Close();
@@ -51,6 +54,11 @@ namespace test
         private void Theory_Task_Loaded(object sender, RoutedEventArgs e)
         {
             SC.Chapter(Theory_Task);
+        }
+
+        private void Theory_Task_SelectionChanged()
+        {
+
         }
     }
 }

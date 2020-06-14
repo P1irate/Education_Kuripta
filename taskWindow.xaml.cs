@@ -19,6 +19,8 @@ namespace test
     /// </summary>
     public partial class taskWindow : Window
     {
+        Sql_Command SC = new Sql_Command();
+        int number_task = 0;
         public taskWindow()
         {
             InitializeComponent();
@@ -42,9 +44,39 @@ namespace test
 
         private void buttonReturn_Click(object sender, RoutedEventArgs e)
         {
-            startWindow startWindow = new startWindow();
-            startWindow.Show();
-            this.Close();
+            if (number_task < Ganeral_Variable.Id_Task.Count)
+            {
+                
+                if(number_task<10)
+                { number_task_label.Content = number_task_label.Content.ToString().Substring(0, number_task_label.Content.ToString().Length - 1); 
+                }
+                if (number_task >= 10 && number_task < 100)
+                {
+                    number_task_label.Content = number_task_label.Content.ToString().Substring(0, number_task_label.Content.ToString().Length - 2);
+                }
+                number_task_label.Content += Convert.ToString(number_task + 1);
+                Task.Text = SC.Getting_Task(Ganeral_Variable.Id_Task[number_task]);
+                Explanation_Вecision.Text = SC.Getting_Solution(Ganeral_Variable.Id_Task[number_task]);
+                number_task++;
+
+            }
+            else
+            {
+                startWindow startWindow = new startWindow();
+                startWindow.Show();
+                this.Close();
+                number_task = 0;
+            }
+            
+        }
+
+        private void Task_Loaded(object sender, RoutedEventArgs e)
+        {
+            number_task_label.Content += Convert.ToString(number_task + 1);
+            SC.Getting_Id_Task(Ganeral_Variable.ID_Theme);
+            Task.Text = SC.Getting_Task(Ganeral_Variable.Id_Task[number_task]);
+            Explanation_Вecision.Text = SC.Getting_Solution(Ganeral_Variable.Id_Task[number_task]);
+            number_task++;
         }
     }
 }

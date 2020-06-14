@@ -19,6 +19,8 @@ namespace test
     /// </summary>
     public partial class startPracticeWindow : Window
     {
+        Sql_Command SC = new Sql_Command();
+        Ganeral_Variable GV = new Ganeral_Variable();
         public startPracticeWindow()
         {
             InitializeComponent();
@@ -42,9 +44,19 @@ namespace test
 
         private void buttonPractice_Click(object sender, RoutedEventArgs e)
         {
+            
+            string name_theme = Practice_Theame.SelectedItem.ToString();
+
+            Ganeral_Variable.ID_Theme = SC.Getting_Id_Theame(name_theme);           
             practiceWindow practiceWindow = new practiceWindow();
             practiceWindow.Show();
             this.Close();
+
+        }
+
+        private void Practice_Theame_Loaded(object sender, RoutedEventArgs e)
+        {
+            SC.Chapter(Practice_Theame);
         }
     }
 }

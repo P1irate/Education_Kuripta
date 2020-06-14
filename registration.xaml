@@ -37,7 +37,7 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="#FF730F0F"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
-                    </ControlTemplate>
+                    </ControlTemplate> 
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
