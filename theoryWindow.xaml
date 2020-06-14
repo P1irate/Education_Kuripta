@@ -57,7 +57,7 @@
                     </Border>
                     <Border Margin="38,60,39,64"
             CornerRadius="5" BorderThickness="2" BorderBrush="#FF730F0F" Background="#F8CFC4">
-                        <TextBox x:Name="Theme" HorizontalAlignment="Left" Height="263" Margin="8,7,0,0" VerticalAlignment="Top" Width="406" BorderBrush="#F8CFC4" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic" FontSize="14" SelectionBrush="#FFDE405B" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True"/>
+                        <TextBox x:Name="Theme" HorizontalAlignment="Left" Height="263" Margin="8,7,0,0" VerticalAlignment="Top" Width="406" BorderBrush="#F8CFC4" Background="#F8CFC4" Foreground="#FFDE405B" FontFamily="Century Gothic" FontSize="14" SelectionBrush="#FFDE405B" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" IsReadOnly="True"/>
                     </Border>
                 </Grid>
 
