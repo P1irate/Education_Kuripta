@@ -50,7 +50,33 @@ namespace test
         {
             User_Answer.ItemsSource = Ganeral_Variable.User_Answer;
             True_Answer.ItemsSource = Ganeral_Variable.Сorrect_Answer;
-
+            int all_answer_true =0 ;
+            int all_ball = 0 ;
+            for (int i = 0; i < Ganeral_Variable.User_Answer.Count; i++)
+            {
+                if (Ganeral_Variable.User_Answer[i] == Ganeral_Variable.Сorrect_Answer[i].ToString())
+                {
+                    all_answer_true++;
+                    if (i<=5)
+                    {
+                        all_ball +=2;
+                    }
+                    if (i>5 &&i<=10)
+                    {
+                        all_ball +=5;
+                    }
+                    if (i > 10 && i <= 15)
+                    {
+                        all_ball +=6;
+                    }
+                    if (i > 15 && i <= 20)
+                    {
+                        all_ball += 7;
+                    }
+                }
+            }
+            label_all_result_answer.Content = "Решено верно "+all_answer_true+" из 20";
+            label_ball.Content = "Набрано "+all_ball+" из 100";
         }
     }
 }
