@@ -50,7 +50,7 @@
                         <Button x:Name="buttonStartTheory" Content="начать" HorizontalAlignment="Left" Margin="5,1,0,0" VerticalAlignment="Top" Width="307" FontFamily="Century Gothic" FontSize="18" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="White" Height="24" Click="buttonStartTheory_Click"/>
                     </Border>
                     <Image HorizontalAlignment="Left" Height="150" Margin="240,195,0,0" VerticalAlignment="Top" Width="150" Source="img/панда2.png"/>
-                    <Label Content="Т Е О Р И Я" Margin="121,10,129,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="28" BorderBrush="#FFFBFBFB" Foreground="#FFEFEF" FontWeight="Bold"/>
+                    <Label Content="Т Е О Р И Я" Margin="125,10,125.6,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="28" BorderBrush="#FFFBFBFB" Foreground="#FFEFEF" FontWeight="Bold"/>
                 </Grid>
 
                 <TextBlock  Padding="5" Grid.Row="2" HorizontalAlignment="Center"></TextBlock>

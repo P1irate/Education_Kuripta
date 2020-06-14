@@ -286,7 +286,8 @@ namespace test
                 gl.Vertex(-0.94 + dx, -0.98 + dy);
             }
             //выоход из режима
-                   }
+            gl.End();
+        }
 
         public void parallelogram1(OpenGLControl openGLControl)
         {
@@ -315,6 +316,7 @@ namespace test
             gl.Vertex(-1.08, -0.5);
             gl.Vertex(0.8, -1f);
             //выход из режима
+            gl.End();
                    }
 
         public void parallelogram2(OpenGLControl openGLControl)
@@ -378,7 +380,8 @@ namespace test
                 double dy = 0.15 * Math.Sin(angle);
                 gl.Vertex(0.08 + dx, -0.01 + dy);
             }
-            //выоход из режи    gl.End();
+            //выоход из режи    
+            gl.End();
         }
 
         public void rhombus1(OpenGLControl openGLControl)
