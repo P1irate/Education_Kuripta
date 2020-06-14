@@ -228,5 +228,12 @@ namespace test
 				}
 			}
         }
-    }
+
+		private void button_Return_theme_Click(object sender, RoutedEventArgs e)
+		{
+			startTheoryWindow startPracticeWindow = new startTheoryWindow();
+			startPracticeWindow.Show();
+			this.Close();
+		}
+	}
 }
