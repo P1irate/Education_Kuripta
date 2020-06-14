@@ -42,7 +42,8 @@ namespace test
             string temp_name = Reg_Login.Text;
             string temp_pas = Reg_Pas.Text;
             string temp_pas2 = Reg_Pas2.Text;
-            if (temp_pas == temp_pas2 &&  SC.Find_User(temp_name,temp_pas) == false && temp_name.Length<32 && temp_pas.Length<32)
+            if (temp_pas == temp_pas2 &&  SC.Find_User(temp_name,temp_pas) == false && temp_name.Length<32 && temp_pas.Length<32 
+                && temp_name.Length > 6 && temp_pas.Length > 6)
             {
                 SC.Add_User(temp_name, temp_pas);
                 Authorization authorization = new Authorization();

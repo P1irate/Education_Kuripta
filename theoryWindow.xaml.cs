@@ -105,7 +105,7 @@ namespace test
 				case "Равносторонний треугольник":
 					figur.triangle5(openGLControl);
 					break;
-				defalt: MessageBox.Show("Ненавижу блять вопросы");
+				default: MessageBox.Show("Ненавижу блять вопросы");
 					break;
 
 			}
