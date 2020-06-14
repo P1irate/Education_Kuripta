@@ -14,12 +14,11 @@ namespace test
 {
     class Figur
     {
-        public OpenGL square1(OpenGLControl openGLControl, object sender, EventArgs e)
+        public OpenGL square1(OpenGLControl openGLControl)
     {
             //ссылка на элемент управления OpenGL 
             OpenGL gl = openGLControl.OpenGL;
             //цвет поля
-            
             gl.ClearColor(255, 255, 255, 1);
             //чистка буфера кадра 
             gl.Clear(OpenGL.GL_COLOR_BUFFER_BIT | OpenGL.GL_DEPTH_BUFFER_BIT);
@@ -45,9 +44,10 @@ namespace test
 
         }
 
-        public void square2(OpenGLControl openGLControl, object sender, EventArgs e)
+        public void square2(OpenGLControl openGLControl)
         {
             //ссылка на элемент управления OpenGL 
+
             OpenGL gl = openGLControl.OpenGL;
             //цвет поля
             gl.ClearColor(255, 255, 255, 1);
@@ -317,7 +317,7 @@ namespace test
             gl.Vertex(0.8, -1f);
             //выход из режима
             gl.End();
-                   }
+        }
 
         public void parallelogram2(OpenGLControl openGLControl)
         {

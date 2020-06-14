@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using SharpGL;
 
 namespace test
 {
@@ -58,17 +57,17 @@ namespace test
         private void MyWindow_Loaded(object sender, RoutedEventArgs e)
         {
             SC.Getting_Id_Theory(Ganeral_Variable.ID_Theme);
-			
+
             Theme.Text = SC.Getting_Theory(Ganeral_Variable.Id_Theme[number_theme]);
 			Theme_label.Content = SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]);
 
 			switch (SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]))
 			{
 				case "Квадрат по сторонам":
-					figur.square1(openGLControl, sender, e);
+					figur.square1(openGLControl);
 					break;
 				case "Квадрат по диагонали":
-					figur.square2(openGLControl, sender, e);
+					figur.square2(openGLControl);
 					break;
 				case "Параллелограмм по васоте и стороне":
 					figur.parallelogram1(openGLControl);
@@ -85,7 +84,7 @@ namespace test
 				case "Ромб по диагоналям ":
 					figur.priombus2(openGLControl);
 					break;
-				case "Ромб по стороне и высоте":
+				case "Ромб по стороне и высоте ":
 					figur.priombus3(openGLControl);
 					break;
 				case "Трапеция по основанию и высоте ":
@@ -122,49 +121,49 @@ namespace test
 				switch (SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]))
 				{
 					case "Квадрат по сторонам":
-						figur.square1(openGLControl, sender, e);
+						figur.square1(openGLControl);
 						break;
 					case "Квадрат по диагонали":
-						figur.square2(openGLControl, sender, e);
+						figur.square2(openGLControl);
 						break;
 					case "Параллелограмм по васоте и стороне":
 						figur.parallelogram1(openGLControl);
 						break;
-					case "Параллелограмм по диагонали и sin":
+					case "Параллелограмм по диагонали и sin ":
 						figur.parallelogram2(openGLControl);
 						break;
-					case "Прямоугольник по сторонам":
+					case "Прямоугольник по сторонам ":
 						figur.rectangle(openGLControl);
 						break;
-					case "Ромб по стороне и sin":
+					case "Ромб по стороне и sin ":
 						figur.rhombus1(openGLControl);
 						break;
-					case "Ромб по диагоналям":
+					case "Ромб по диагоналям ":
 						figur.priombus2(openGLControl);
 						break;
-					case "Ромб по стороне и высоте":
+					case "Ромб по стороне и высоте ":
 						figur.priombus3(openGLControl);
 						break;
-					case "Трапеция по основанию и высоте":
+					case "Трапеция по основанию и высоте ":
 						figur.trapezoid(openGLControl);
 						break;
-					case "Треугольник по стороне и высоте":
+					case "Треугольник по стороне и высоте ":
 						figur.triangle1(openGLControl);
 						break;
-					case "Треугольник по сторонам и sin":
+					case "Треугольник по сторонам и sin ":
 						figur.triangle2(openGLControl);
 						break;
-					case "Треугольник по формуле Герона":
+					case "Треугольник по формуле Герона ":
 						figur.triangle3(openGLControl);
 						break;
-					case "Прямоугольный треугольник":
+					case "Прямоугольный треугольник ":
 						figur.triangle4(openGLControl);
 						break;
-					case "Равносторонний треугольник":
+					case "Равносторонний треугольник ":
 						figur.triangle5(openGLControl);
 						break;
 
-					defalt: MessageBox.Show("Ненавижу блять вопросы");
+					default: MessageBox.Show("Ненавижу блять вопросы");
 						break;
 
 				}
@@ -181,49 +180,49 @@ namespace test
 				switch (SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]))
 				{
 					case "Квадрат по сторонам":
-						openGLControl.Content = figur.square1(openGLControl, sender, e);
+						figur.square1(openGLControl);
 						break;
 					case "Квадрат по диагонали":
-						figur.square2(openGLControl, sender, e);
+						figur.square2(openGLControl);
 						break;
 					case "Параллелограмм по васоте и стороне":
 						figur.parallelogram1(openGLControl);
 						break;
-					case "Параллелограмм по диагонали и sin":
+					case "Параллелограмм по диагонали и sin ":
 						figur.parallelogram2(openGLControl);
 						break;
-					case "Прямоугольник по сторонам":
+					case "Прямоугольник по сторонам ":
 						figur.rectangle(openGLControl);
 						break;
-					case "Ромб по стороне и sin":
+					case "Ромб по стороне и sin ":
 						figur.rhombus1(openGLControl);
 						break;
-					case "Ромб по диагоналям":
+					case "Ромб по диагоналям ":
 						figur.priombus2(openGLControl);
 						break;
-					case "Ромб по стороне и высоте":
+					case "Ромб по стороне и высоте ":
 						figur.priombus3(openGLControl);
 						break;
-					case "Трапеция по основанию и высоте":
+					case "Трапеция по основанию и высоте ":
 						figur.trapezoid(openGLControl);
 						break;
-					case "Треугольник по стороне и высоте":
+					case "Треугольник по стороне и высоте ":
 						figur.triangle1(openGLControl);
 						break;
-					case "Треугольник по сторонам и sin":
+					case "Треугольник по сторонам и sin ":
 						figur.triangle2(openGLControl);
 						break;
-					case "Треугольник по формуле Герона":
+					case "Треугольник по формуле Герона ":
 						figur.triangle3(openGLControl);
 						break;
-					case "Прямоугольный треугольник":
+					case "Прямоугольный треугольник ":
 						figur.triangle4(openGLControl);
 						break;
-					case "Равносторонний треугольник":
+					case "Равносторонний треугольник ":
 						figur.triangle5(openGLControl);
 						break;
 
-					defalt: MessageBox.Show("Ненавижу блять вопросы");
+					default: MessageBox.Show("Ненавижу блять вопросы");
 						break;
 
 				}
