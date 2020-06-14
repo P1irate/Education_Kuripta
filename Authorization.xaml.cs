@@ -50,17 +50,21 @@ namespace test
             startWindow startWindow = new startWindow();
             Ganeral_Variable.UserName = login.Text;
             GV.UserPas = password.Text;
-
-            GV.Login_Permission = SC.Find_User(Ganeral_Variable.UserName, GV.UserPas);
-            if (GV.Login_Permission == true)
+            if (password.Text != "")
             {
-                startWindow.Show();
-                this.Close();
+                GV.Login_Permission = SC.Find_User(Ganeral_Variable.UserName, GV.UserPas);
+                if (GV.Login_Permission == true)
+                {
+                    startWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Логин или пароль неверен");
+                }
             }
-            else
-            {
-                MessageBox.Show("Логин или пароль неверен");
-            }  
+            else MessageBox.Show("Введите пароль");
+
         }
     }
 }
