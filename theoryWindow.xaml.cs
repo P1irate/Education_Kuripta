@@ -107,46 +107,46 @@ namespace test
 			switch (SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]))
 			{
 				case "Квадрат по сторонам":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\кв1.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\кв1.jpg"));
 					break;
 				case "Квадрат по диагонали":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\кв2.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\кв2.jpg"));
 					break;
 				case "Параллелограмм по васоте и стороне":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\парам1.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\парам1.jpg"));
 					break;
 				case "Параллелограмм по диагонали и sin ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\парам2.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\парам2.jpg"));
 					break;
 				case "Прямоугольник по сторонам ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\пр.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\пр.jpg"));
 					break;
 				case "Ромб по стороне и sin ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\р1.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\р1.jpg"));
 					break;
 				case "Ромб по диагоналям ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\р2.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\р2.jpg"));
 					break;
 				case "Ромб по стороне и высоте ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\р3.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\р3.jpg"));
 					break;
 				case "Трапеция по основанию и высоте ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\трап.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\трап.jpg"));
 					break;
 				case "Треугольник по стороне и высоте ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр1.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\тр1.jpg"));
 					break;
 				case "Треугольник по сторонам и sin ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр2.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\тр2.jpg"));
 					break;
 				case "Треугольник по формуле Герона ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр3.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\тр3.jpg"));
 					break;
 				case "Прямоугольный треугольник ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр4.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\тр4.jpg"));
 					break;
 				case "Равносторонний треугольник ":
-					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр5.jpg"));
+					image.Source = new BitmapImage(new Uri("C:\\Users\\dimka\\Desktop\\test\\pic\\тр5.jpg"));
 					break;
 				default:
 					MessageBox.Show("Произошла непредвиденная ошибка");
