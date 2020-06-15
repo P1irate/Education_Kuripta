@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:test"
         mc:Ignorable="d"    WindowStartupLocation="CenterScreen"
       Title="Profile" Height="523.799" Width="746.524" x:Name="MyWindow"
-        AllowsTransparency="True" Background="Transparent" WindowStyle="None" Loaded="MyWindow_Loaded">
+         Background="Transparent" WindowStyle="None" Loaded="MyWindow_Loaded">
 
 
     <Window.Resources>
@@ -60,7 +60,7 @@
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
         <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="2"
-                CornerRadius="30,30,30,30" Margin="0,0,-16,-11" Grid.RowSpan="2">
+                CornerRadius="30,30,30,30" Margin="0,-11,-16,-11" Grid.RowSpan="2">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientBrush.GradientStops>
@@ -71,17 +71,17 @@
                     </GradientBrush.GradientStops>
                 </LinearGradientBrush>
             </Border.Background>
-            <Grid Margin="0,0,-2,-2">
+            <Grid Margin="0,0,-2,-15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"></RowDefinition>
-                    <RowDefinition Height="32*"></RowDefinition>
+                    <RowDefinition Height="71*"></RowDefinition>
+                    <RowDefinition Height="455*"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Margin="0,0,0,218" Grid.RowSpan="2">
-                    <Button x:Name="buttonExit" Width="30" Height="30" Background="#73220C" BorderBrush="#73220C" Margin="684,23,37,252" Click="buttonExit_Click">
+                    <Button x:Name="buttonExit" Width="30" Height="30" Background="#73220C" BorderBrush="#73220C" Margin="664,35,49,256" Click="buttonExit_Click">
                         <Image Source="img/33.png" RenderTransformOrigin="1,0.5"/>
                     </Button>
-                    <Button x:Name="buttonHide" Width="30" Height="30" Background="#73220C" BorderBrush="#73220C" Margin="637,23,84,252" Click="buttonHide_Click">
+                    <Button x:Name="buttonHide" Width="30" Height="30" Background="#73220C" BorderBrush="#73220C" Margin="584,35,129,256" Click="buttonHide_Click">
                         <Image Source="img/22.png" RenderTransformOrigin="1,0.5"/>
                     </Button>
                     <Label Content="Профиль" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20" BorderBrush="#FFFBFBFB" Foreground="#FFEFEF" Height="32" Width="154"/>
@@ -92,14 +92,16 @@
                         <Label x:Name="All_test" Content="Всего тестов:" HorizontalAlignment="Left" Height="30" Margin="0,171,0,0" VerticalAlignment="Top" Width="173" FontFamily="Century Gothic" FontSize="14" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8"/>
                         <Label x:Name="Avarable_ball" Content="Среднее кол-во баллов" HorizontalAlignment="Left" Margin="230,171,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" Width="213" Height="30"/>
                         <Label x:Name="Best_result" Content="Лучший результат:" HorizontalAlignment="Left" Margin="495,171,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" Width="181" RenderTransformOrigin="0.509,0.808" Height="30"/>
-                        
+
                     </Grid>
                 </Border>
             </Grid>
         </Border>
+
         <Label x:Name="label_User_Name" Content="Логин:" FontFamily="Century Gothic" FontSize="14" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" HorizontalAlignment="Left" Margin="281,159,0,0" VerticalAlignment="Top" Width="190"/>
-        <WindowsFormsHost Margin="28,294,29,10">
-            <wf:DataGridView x:Name="Data_Grid_Education_Group" />
+        <WindowsFormsHost Margin="27,302,10,10">
+            <wf:DataGridView x:Name="Data_Grid_Education_Group" BackgroundColor="Azure" />
         </WindowsFormsHost>
     </Grid>
+
 </Window>
