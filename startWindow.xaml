@@ -37,7 +37,7 @@
                     <Button x:Name="buttonHelp" Background="#73220C" BorderBrush="#73220C" Margin="28,16,733,14" Click="buttonHelp_Click">
                         <Image Source="img/00.png" RenderTransformOrigin="1,0.5"/>
                     </Button>
-                    <Button x:Name="buttonAuto" Background="#73220C" BorderBrush="#73220C" Margin="66,16,692,14" Click="buttonAuto_Click">
+                    <Button x:Name="buttonAuto" Background="#73220C" BorderBrush="#73220C" Margin="66,16,692,14" Click="buttonProfile_Click">
                         <Image Source="img/555.png"/>
                     </Button>
                 </Grid>

@@ -64,11 +64,11 @@ namespace test
             this.Close();
         }
 
-        private void buttonAuto_Click(object sender, RoutedEventArgs e)
+        private void buttonProfile_Click(object sender, RoutedEventArgs e)
         {
-            Authorization authorization = new Authorization();
-            authorization.Show();
-            this.Close();
+            Profile profile = new Profile();
+            profile.Show();
+ 
         }
     }
 }

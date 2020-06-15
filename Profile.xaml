@@ -1,0 +1,105 @@
+﻿<Window x:Class="test.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:local="clr-namespace:test"
+        mc:Ignorable="d"    WindowStartupLocation="CenterScreen"
+      Title="Profile" Height="523.799" Width="746.524" x:Name="MyWindow"
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None" Loaded="MyWindow_Loaded">
+
+
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="#FF730F0F"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" BorderBrush="#FF730F0F" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF730F0F"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF730F0F"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <Grid Margin="0,0,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="2"
+                CornerRadius="30,30,30,30" Margin="0,0,-16,-11" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientBrush.GradientStops>
+                        <GradientStopCollection>
+                            <GradientStop Color="#73220C" Offset="0.0"></GradientStop>
+                            <GradientStop Color="#73220C" Offset="0.3"></GradientStop>
+                        </GradientStopCollection>
+                    </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="0,0,-2,-2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="32*"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Margin="0,0,0,218" Grid.RowSpan="2">
+                    <Button x:Name="buttonExit" Width="30" Height="30" Background="#73220C" BorderBrush="#73220C" Margin="684,23,37,252" Click="buttonExit_Click">
+                        <Image Source="img/33.png" RenderTransformOrigin="1,0.5"/>
+                    </Button>
+                    <Button x:Name="buttonHide" Width="30" Height="30" Background="#73220C" BorderBrush="#73220C" Margin="637,23,84,252" Click="buttonHide_Click">
+                        <Image Source="img/22.png" RenderTransformOrigin="1,0.5"/>
+                    </Button>
+                    <Label Content="Профиль" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20" BorderBrush="#FFFBFBFB" Foreground="#FFEFEF" Height="32" Width="154"/>
+                </Grid>
+                <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="1" CornerRadius="50,40,50,40" Background="#F6AD9A" Margin="0,10,0,24" Grid.Row="1">
+                    <Grid Grid.Row="1" Height="398" VerticalAlignment="Bottom" Background="#F6AD9A" Margin="23,0,21,9">
+                        <Image x:Name="profile_png" Margin="0,0,563,236" Source="profile.png" Stretch="Fill"/>
+                        <Label x:Name="All_test" Content="Всего тестов:" HorizontalAlignment="Left" Height="30" Margin="0,171,0,0" VerticalAlignment="Top" Width="173" FontFamily="Century Gothic" FontSize="14" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8"/>
+                        <Label x:Name="Avarable_ball" Content="Среднее кол-во баллов" HorizontalAlignment="Left" Margin="230,171,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" Width="213" Height="30"/>
+                        <Label x:Name="Best_result" Content="Лучший результат:" HorizontalAlignment="Left" Margin="495,171,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" Width="181" RenderTransformOrigin="0.509,0.808" Height="30"/>
+                        
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+        <Label x:Name="label_User_Name" Content="Логин:" FontFamily="Century Gothic" FontSize="14" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" HorizontalAlignment="Left" Margin="281,159,0,0" VerticalAlignment="Top" Width="190"/>
+        <WindowsFormsHost Margin="28,294,29,10">
+            <wf:DataGridView x:Name="Data_Grid_Education_Group" />
+        </WindowsFormsHost>
+    </Grid>
+</Window>
