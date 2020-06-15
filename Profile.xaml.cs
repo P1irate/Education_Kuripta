@@ -30,7 +30,7 @@ namespace test
             SC.DisplayClientData(Data_Grid_Education_Group, Ganeral_Variable.ID_user);
             Avarable_ball.Content = "Средний балл: " +SC.Getting_average_mark_user(Ganeral_Variable.ID_user);
             Best_result.Content = "Лучший результат: " + SC.Getting_max_result_user(Ganeral_Variable.ID_user);
-            All_test.Content = "Всего тестов" + SC.Getting_All_tests_user(Ganeral_Variable.ID_user);
+            All_test.Content = "Всего тестов " + SC.Getting_All_tests_user(Ganeral_Variable.ID_user);
         }
         private void buttonHide_Click(object sender, RoutedEventArgs e)
         {
