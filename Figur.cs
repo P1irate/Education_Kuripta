@@ -14,7 +14,7 @@ namespace test
 {
     class Figur
     {
-        public OpenGL square1(OpenGLControl openGLControl)
+        public void square1(OpenGLControl openGLControl)
     {
             //ссылка на элемент управления OpenGL 
             OpenGL gl = openGLControl.OpenGL;
@@ -32,7 +32,7 @@ namespace test
             //соединение вершин
             gl.Begin(OpenGL.GL_LINE_LOOP);
             //цвет вершин
-            gl.Color(0, 0, 0);
+            gl.Color(0.0f, 0.0f, 0.0f);
             //список вершин для квадрата
             gl.Vertex(-1f, -1f);
             gl.Vertex(-1f, 1f);
@@ -40,7 +40,6 @@ namespace test
             gl.Vertex(1f, -1f);
             //выход из режима
             gl.End();
-            return gl;
 
         }
 

@@ -37,7 +37,7 @@
                 </Grid>
                 <Grid Grid.Row="1" Background="#FFEFEF"/>
 
-                <TextBlock  Padding="5" Grid.Row="2" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock  TextWrapping="Wrap" Foreground="#FF730F0F" FontFamily="Century Gothic" FontSize="14"  TextAlignment="Center" Margin="0,0.4,-0.2,9.8" Grid.Row="1"><Run/><LineBreak/><Run Text=" Ебаный рот этого приложения блять, уебаны делали нахуй, ну что за ебаные нахуй задачи просто пизда, оценки в хуй скатились батя ремнем пиздит сестра не дает. Сука не жизнь, а аллюзия на черешню;"/></TextBlock>
 
             </Grid>
         </Border>

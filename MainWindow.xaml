@@ -10,11 +10,11 @@
         AllowsTransparency="True" Background="Transparent" WindowStyle="None">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="203*"/>
-            <ColumnDefinition Width="598*"/>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="219*"/>
         </Grid.ColumnDefinitions>
         <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="3"
-                CornerRadius="30,30,30,30" Grid.ColumnSpan="2">
+                CornerRadius="30,30,30,30" Grid.ColumnSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientBrush.GradientStops>
@@ -47,7 +47,7 @@
                 CornerRadius="50,50,40,40" Background="#FFEFEF">
                     </Border>
                     <Label Content="О Б У Ч Е Н И Е" Margin="254,22,250,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="40" BorderBrush="#FFFBFBFB" Foreground="#FF730F0F"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="72,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF730F0F" FontFamily="Century Gothic" FontSize="18" Height="209" Width="431"><Run Text="  &#x9;"/><Run/><LineBreak/><Run Text="&#x9;"/><Run Text="Добро пожаловать в обучающую программу &quot;Площади и панды&quot;!"/><LineBreak/><Run Text="&#x9;Это программа поможет Вам правильно решать задачи на площади и в школе все учителя будут Вами восхищаться!!!!"/><LineBreak/><Run Text="&#x9;Скорее же нажми на кнопку &quot;перейти к обучению&quot; и совершенствуйся!"/><LineBreak/><Run Text="  "/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="72,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF730F0F" FontFamily="Century Gothic" FontSize="18" Height="209" Width="431" TextAlignment="Center" ><Run/><LineBreak/><Run Text="Добро пожаловать в обучающую"/><LineBreak/><Run Text= "программу &quot;Площади и панды&quot;!"/><LineBreak/><Run Text="Это программа поможет Вам правильно решать задачи на площади и в школе все учителя будут Вами восхищаться!!!!"/><LineBreak/><Run Text="Скорее же нажми на кнопку &quot;перейти к обучению&quot; и совершенствуйся!"/><LineBreak/><Run Text="  "/></TextBlock>
                     <Image HorizontalAlignment="Left" Height="209" Margin="543,104,0,0" VerticalAlignment="Top" Width="210" Source="img/панда.png"/>
                     <Border Margin="230,334,230,31" CornerRadius="10" BorderThickness="2" BorderBrush="#FF730F0F" Background="#FFCD572D">
                         <Button x:Name="buttonStart" Content="перейти к обучению" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" Width="322" FontFamily="Century Gothic" FontSize="20" Background="#FFCD572D" BorderBrush="#FFCD572D" Foreground="#FFF0E9D8" Height="30" Click="buttonStart_Click"/>
