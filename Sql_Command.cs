@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
+using ListBox = System.Windows.Controls.ListBox;
+using MessageBox = System.Windows.MessageBox;
 
 namespace test
 {
@@ -14,7 +17,7 @@ namespace test
     public class Sql_Command
     {
         Ganeral_Variable GV = new Ganeral_Variable();
-
+        public SqlDataAdapter adapter;
         public string Getting_Task(int id_task)
         {
             string task = null;
@@ -347,6 +350,30 @@ namespace test
 
 			}
 		}
+        public void Getting_Id_user(string user_log,string user_pas)
+        {
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("Select UserID From Users WHERE UserName = '"+user_log+"' and UserPas = '"+user_pas+"'", connection);
+                    Ganeral_Variable.ID_user = (int)command.ExecuteScalar();
+                    connection.Close();
+              
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+
+            }
+        }
 
         public string clubOfHating63(string text)
         {
@@ -358,8 +385,118 @@ namespace test
             if(text.Last() == '?') resText += text.Last();
             return resText;
         }
+        public void DisplayClientData(DataGridView dataGrid, int id_user)
+        {
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    DataTable dt = new DataTable();
+                    adapter = new SqlDataAdapter("SELECT (SELECT Name_Chapter FROM Chapter WHERE ID = Id_Chapter) AS Тема,All_tests AS Тестов_по_теме,Average_mark AS Средний_результат,Best_result AS Лучший_результат FROM Otchet otc WHERE otc.ID_User = " + id_user, connection);
+                    adapter.Fill(dt);
+                    dataGrid.DataSource = dt;
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show(ex.Message);
 
-        
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+        }
+
+        public int Getting_max_result_user(int id_user)
+        {
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                int max_result = 0;
+                try
+                {
+                   
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("SELECT MAX(Best_result) AS Лучший_результат FROM Otchet otc WHERE otc.ID_User = " + id_user, connection);
+                    max_result = Convert.ToInt32(command.ExecuteScalar());
+                    connection.Close();
+                    return max_result;
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show(ex.Message);
+                    return max_result;
+                }
+                finally
+                {
+                    connection.Close();
+                    
+                }
+
+
+            }
+        }
+
+        public int Getting_average_mark_user(int id_user)
+        {
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                int average_mark = 0;
+                try
+                {
+
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("SELECT AVG(Average_mark) AS Лучший_результат FROM Otchet otc WHERE otc.ID_User = " + id_user, connection);
+                    average_mark = Convert.ToInt32(command.ExecuteScalar());
+                    connection.Close();
+                    return average_mark;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return average_mark;
+                }
+                finally
+                {
+                    connection.Close();
+
+                }
+
+
+            }
+        }
+        public int Getting_All_tests_user(int id_user)
+        {
+            using (SqlConnection connection = new SqlConnection(GV.ConnectionString))
+            {
+                int all_test = 0;
+                try
+                {
+
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("SELECT SUM(All_tests) FROM Otchet otc WHERE otc.ID_User =  " + id_user, connection);
+                    all_test = Convert.ToInt32(command.ExecuteScalar());
+                    connection.Close();
+                    return all_test;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return all_test;
+                }
+                finally
+                {
+                    connection.Close();
+
+                }
+
+
+            }
+        }
+
     }
 
 }

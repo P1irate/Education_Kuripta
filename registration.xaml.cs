@@ -46,6 +46,9 @@ namespace test
                 && temp_name.Length > 6 && temp_pas.Length > 6)
             {
                 SC.Add_User(temp_name, temp_pas);
+                Ganeral_Variable.UserName = temp_name;
+                Ganeral_Variable.UserPas = temp_pas;
+                SC.Getting_Id_user(temp_name, temp_pas);
                 Authorization authorization = new Authorization();
                 authorization.Show();
                 this.Close();
