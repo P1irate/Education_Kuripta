@@ -65,7 +65,7 @@
                 <Grid Grid.Row="1" Margin="500,0,0,0">
                     <Border Width="auto" Height="auto" BorderBrush="#FF730F0F" BorderThickness="1"
                 CornerRadius="0,50,40,0" Background="#FFEFEF">
-                        <wpf:OpenGLControl OpenGLInitialized="openGLControl_OpenGLInitialized" OpenGLDraw="openGLControl_OpenGLDraw" x:Name="openGLControl"  Margin="25,25,25,25" AutomationProperties.IsOffscreenBehavior="Onscreen" AutomationProperties.IsRowHeader="True" OpenGLVersion="OpenGL4_4"/>
+                        <Image x:Name="image" Visibility="Visible" Margin="25,25,25,25" AutomationProperties.IsOffscreenBehavior="Onscreen" AutomationProperties.IsRowHeader="True" />
                     </Border>
                 </Grid>
             </Grid>

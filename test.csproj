@@ -276,5 +276,47 @@
   <ItemGroup>
     <Resource Include="profile.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\кв1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\кв2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\парам1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\парам2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\пр.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\р1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\р2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\р3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\тр2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\тр1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\тр3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\тр4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\тр5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic\трап.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

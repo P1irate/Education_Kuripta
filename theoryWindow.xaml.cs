@@ -65,7 +65,7 @@ namespace test
 
 			Theme.Text = SC.Getting_Theory(Ganeral_Variable.Id_Theme[number_theme]);
 			Theme_label.Content = SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]);
-		
+			imageSwap();
 			
         }
 
@@ -76,8 +76,8 @@ namespace test
                 number_theme--;
 				Theme_label.Content = SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]);
 				Theme.Text = SC.Getting_Theory(Ganeral_Variable.Id_Theme[number_theme]);
-			
-				
+				imageSwap();
+
 			}
 		}
 
@@ -88,8 +88,8 @@ namespace test
                 number_theme++;
 				Theme_label.Content = SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]);
 				Theme.Text = SC.Getting_Theory(Ganeral_Variable.Id_Theme[number_theme]);
-				
-				
+				imageSwap();
+
 			}
         }
 
@@ -102,55 +102,54 @@ namespace test
 
 	
 
-		private void openGLControl_OpenGLDraw(object sender, SharpGL.SceneGraph.OpenGLEventArgs args)
+		private void imageSwap()
 		{
-			openGLControl_OpenGLInitialized(sender, args);
 			switch (SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]))
 			{
 				case "Квадрат по сторонам":
-					figur.square1(openGLControl, args);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\кв1.jpg"));
 					break;
 				case "Квадрат по диагонали":
-					figur.square2(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\кв2.jpg"));
 					break;
 				case "Параллелограмм по васоте и стороне":
-					figur.parallelogram1(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\парам1.jpg"));
 					break;
 				case "Параллелограмм по диагонали и sin ":
-					figur.parallelogram2(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\парам2.jpg"));
 					break;
 				case "Прямоугольник по сторонам ":
-					figur.rectangle(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\пр.jpg"));
 					break;
 				case "Ромб по стороне и sin ":
-					figur.rhombus1(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\р1.jpg"));
 					break;
 				case "Ромб по диагоналям ":
-					figur.priombus2(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\р2.jpg"));
 					break;
 				case "Ромб по стороне и высоте ":
-					figur.priombus3(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\р3.jpg"));
 					break;
 				case "Трапеция по основанию и высоте ":
-					figur.trapezoid(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\трап.jpg"));
 					break;
 				case "Треугольник по стороне и высоте ":
-					figur.triangle1(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр1.jpg"));
 					break;
 				case "Треугольник по сторонам и sin ":
-					figur.triangle2(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр2.jpg"));
 					break;
 				case "Треугольник по формуле Герона ":
-					figur.triangle3(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр3.jpg"));
 					break;
 				case "Прямоугольный треугольник ":
-					figur.triangle4(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр4.jpg"));
 					break;
 				case "Равносторонний треугольник ":
-					figur.triangle5(openGLControl);
+					image.Source = new BitmapImage(new Uri("C:\\Users\\morko\\Source\\Repos\\P1irate\\Education_Kuripta\\pic\\тр5.jpg"));
 					break;
 				default:
-					MessageBox.Show("Ненавижу блять вопросы");
+					MessageBox.Show("Произошла непредвиденная ошибка");
 					break;
 
 			}
