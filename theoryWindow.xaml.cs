@@ -65,7 +65,7 @@ namespace test
 
 			Theme.Text = SC.Getting_Theory(Ganeral_Variable.Id_Theme[number_theme]);
 			Theme_label.Content = SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]);
-			openGLC();
+		
 			
         }
 
@@ -76,7 +76,7 @@ namespace test
                 number_theme--;
 				Theme_label.Content = SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]);
 				Theme.Text = SC.Getting_Theory(Ganeral_Variable.Id_Theme[number_theme]);
-				openGLC();
+			
 				
 			}
 		}
@@ -88,7 +88,7 @@ namespace test
                 number_theme++;
 				Theme_label.Content = SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]);
 				Theme.Text = SC.Getting_Theory(Ganeral_Variable.Id_Theme[number_theme]);
-				openGLC();
+				
 				
 			}
         }
@@ -100,11 +100,7 @@ namespace test
 			this.Close();
 		}
 
-		private void openGLC()
-		{
-			
-			
-		}
+	
 
 		private void openGLControl_OpenGLDraw(object sender, SharpGL.SceneGraph.OpenGLEventArgs args)
 		{
@@ -112,7 +108,7 @@ namespace test
 			switch (SC.Getting_Name_Theory(Ganeral_Variable.Id_Theme[number_theme]))
 			{
 				case "Квадрат по сторонам":
-					figur.square1(openGLControl);
+					figur.square1(openGLControl, args);
 					break;
 				case "Квадрат по диагонали":
 					figur.square2(openGLControl);

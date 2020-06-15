@@ -14,10 +14,10 @@ namespace test
 {
     class Figur
     {
-        public void square1(OpenGLControl openGLControl)
+        public void square1(OpenGLControl openGLControl, SharpGL.SceneGraph.OpenGLEventArgs args)
     {
             //ссылка на элемент управления OpenGL 
-            OpenGL gl = openGLControl.OpenGL;
+            OpenGL gl = args.OpenGL;
             //цвет поля
             gl.ClearColor(255, 255, 255, 1);
             //чистка буфера кадра 
@@ -38,6 +38,7 @@ namespace test
             gl.Vertex(-1f, 1f);
             gl.Vertex(1f, 1f);
             gl.Vertex(1f, -1f);
+            
             //выход из режима
             gl.End();
 
